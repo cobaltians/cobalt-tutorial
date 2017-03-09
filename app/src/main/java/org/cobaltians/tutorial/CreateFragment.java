@@ -19,8 +19,4 @@ public class CreateFragment extends CobaltFragment {
     protected boolean onUnhandledMessage(JSONObject message) {
         return false;
     }
-
-    public void onResetButtonClicked() {
-        sendEvent("resetEvent", null, null);
-    }
 }
