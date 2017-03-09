@@ -1,0 +1,16 @@
+[submodule "cobalt"]
+	path = cobalt
+	url = https://github.com/cobaltians/Cobalt-Android.git
+	branch = develop
+[submodule "snackbar-plugin"]
+	path = snackbar-plugin
+	url = https://github.com/Cobaltians-Plugins/Plugins-Snackbar-Android.git
+	branch = develop
+[submodule "app/src/main/assets/snackbar-plugin"]
+	path = app/src/main/assets/snackbar-plugin
+	url = https://github.com/Cobaltians-Plugins/Plugins-Snackbar-Web.git
+	branch = develop
+[submodule "app/src/main/assets/platform"]
+	path = app/src/main/assets/platform
+	url = https://github.com/cobaltians/Cobalt-Web-Android.git
+	branch = develop
