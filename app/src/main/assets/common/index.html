@@ -1,107 +1,111 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
-        <link rel="stylesheet" href="styles.css"/>
-    </head>
-    <body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="styles.css"/>
 
-        <script type="text/javascript" src="js/zepto.min.js"></script>
-        <script type="text/javascript" src="../platform/cobalt.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-        <script type="text/javascript" src="js/app.events.js"></script>
-        <script type="text/javascript" src="js/handlebars-v3.0.1.js"></script>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="../platform/cobalt.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/app.events.js"></script>
+    <script type="text/javascript" src="js/handlebars-v3.0.1.js"></script>
 
-        <script>
-            Zepto(function($){
+</head>
+<body>
 
-                  cobalt.init({
-                              debug : app.debug,
-                              debugInBrowser : app.debugInBrowser,
-                              debugInDiv : app.debugInDiv,
-                              
-                              events:{
-                                  "onBackButtonPressed":function(data, callback){
-                                        cobalt.alert('Quit ?',"Are you sure you want to quit the app ?", ["Yeah","No"],{ callback:function(params){
-                                                     if (params.index===0){
-                                                     //allow quitting
-                                                     cobalt.sendCallback(callback,{value : true});
-                                                     }
-                                                 }})
-                                  },
+<script id="tpl_events_holder" type="text/x-handlebars-template">
+    <div id="events-list">
+    </div>
+    <div id="infiniteScroll"><b>Loading ...</b></div>
+</script>
 
-                                  "pullToRefresh":function(data, callback){
-                                        app.events.reset();
-                                        app.events.refresh();
-                                        cobalt.sendCallback(callback);
-                                  },
+<script id="tpl_events_page" type="text/x-handlebars-template">
+    {{#each .}}
+    {{> tpl_event_item .}}
+    {{/each}}
+</script>
 
-                                  "infiniteScroll":function(data, callback){
-                                        cobalt.log("infiniteScroll");
-                                        app.events.refresh();
-                                        cobalt.sendCallback(callback);
-                                  },
+<script id="tpl_event_item" type="text/x-handlebars-template">
+    <div class="event-item">
+        <li data-event-id={{id}}>
+            <div class="event-item-line-first">
+                <div class="event-item-title"><b>{{title}}</b></div>
+                <div class="event-item-date">{{date}}</div>
+            </div>
+            <div class="event-item-line-second">
+                <div class="event-item-place">{{place}}</div>
+            </div>
+        </li>
+    </div>
+</script>
 
-                                  "addEvent":function(data,callback) {
-                                        cobalt.navigate.push({page:"addEvent.html", controller:"create"});
-                                  },
+<script type="text/javascript">
+  //On DOM ready
+  Zepto(function($) {
+    cobalt.init({
+      debug: app.debug,
+      debugInBrowser: app.debugInBrowser,
+      debugInDiv: app.debugInDiv,
 
-                                  "onPageShown":function(data,callback) {
+      events: {
+        "onBackButtonPressed": function(data, callback) {
+          cobalt.alert('Quit ?', "Are you sure you want to quit the app ?", ["Yeah", "No"], {
+            callback: function(params) {
+              if (params.index === 0) {
+                //allow quitting
+                cobalt.sendCallback(callback, {value: true});
+              }
+            }
+          })
+        },
 
-                                        var create=false;
+        "pullToRefresh": function(data, callback) {
+          app.events.reset();
+          app.events.refresh();
+          cobalt.sendCallback(callback);
+        },
 
-                                        //Create methode
-                                        create = cobalt.storage.get('create',"json");
+        "infiniteScroll": function(data, callback) {
+          cobalt.log("infiniteScroll");
+          app.events.refresh();
+          cobalt.sendCallback(callback);
+        },
 
-                                        if(create && create.value) {
-                                            var name = cobalt.storage.get('newEventName',"json").value;
-                                            var date = cobalt.storage.get('newEventDate',"json").value;
-                                            var context = {title: name, date: date, place: "", notes: undefined};
-                                            app.events.addEvent(context);
+        "addEvent": function(data, callback) {
+          cobalt.navigate.push({page: "addEvent.html", controller: "create"});
+        },
 
-                                            var create = { value: false};
-                                            cobalt.storage.set('create',create,"json");
-                                        }
+        "onPageShown": function(data, callback) {
 
-                                        app.events.reset();
-                                        app.events.refresh();
-                                  }
-                              }
-                });
+          var create = false;
 
-                app.initPage('Cobalt Tutorial');
-                app.events.init();
-              })
+          //Create methode
+          create = cobalt.storage.get('create', "json");
 
-        </script>
+          if (create && create.value) {
+            var name = cobalt.storage.get('newEventName', "json").value;
+            var date = cobalt.storage.get('newEventDate', "json").value;
+            var context = {title: name, date: date, place: "", notes: undefined};
+            app.events.addEvent(context);
 
-    </body>
+            var create = {value: false};
+            cobalt.storage.set('create', create, "json");
+          }
 
-    <script id="tpl_events_holder" type="text/x-handlebars-template">
-        <div id="events-list">
-        </div>
-        <div id="infiniteScroll"><b>Loading ...</b></div>
-    </script>
+          app.events.reset();
+          app.events.refresh();
+        }
+      }
+    });
 
-    <script id="tpl_events_page" type="text/x-handlebars-template">
-         {{#each .}}
-         {{> tpl_event_item .}}
-         {{/each}}
-    </script>
+    app.setTitle('Cobalt Tutorial');
+    app.events.init();
+  })
 
-    <script id="tpl_event_item" type="text/x-handlebars-template">
-        <div class="event-item">
-            <li data-event-id={{id}}>
-                <div class="event-item-line-first">
-                    <div class="event-item-title"><b>{{title}}</b></div>
-                    <div class="event-item-date">{{date}}</div>
-                </div>
-                <div class="event-item-line-second">
-                    <div class="event-item-place">{{place}}</div>
-                </div>
-            </li>
-        </div>
-    </script>
+</script>
+</body>
+
 
 </html>
