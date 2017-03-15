@@ -80,7 +80,7 @@ public class CreateActivity extends CobaltActivity implements OnMapReadyCallback
         try {
             JSONObject data = new JSONObject();
             data.put("place", "Lannion");
-            ((CreateFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container)).sendEvent("focusMapOn", data, null);
+            ((CreateFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container)).sendEvent("setPlace", data, null);
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -108,7 +108,7 @@ public class CreateActivity extends CobaltActivity implements OnMapReadyCallback
         try {
             JSONObject data = new JSONObject();
             data.put("place", place);
-            ((CreateFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container)).sendEvent("focusMapOn", data, null);
+            ((CreateFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container)).sendEvent("setPlace", data, null);
         }
         catch (JSONException e) {
             e.printStackTrace();

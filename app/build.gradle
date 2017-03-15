@@ -24,7 +24,6 @@ dependencies {
     compile project(':cobalt')
     compile project(':fontawesome-font')
     compile project(':pubsub-plugin')
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

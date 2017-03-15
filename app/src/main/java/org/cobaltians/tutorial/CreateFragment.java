@@ -23,12 +23,12 @@ public class CreateFragment extends CobaltFragment {
 
     @Override
     protected boolean onUnhandledEvent(String event, JSONObject data, String callback) {
-        if ("focusMapOn".equals(event)) {
+        if ("setPlace".equals(event)) {
             try {
                 ((CreateActivity) mContext).focusOnThisFuckingPlace(data.getString("place"));
             }
             catch (JSONException e) {
-                Log.w(TAG, "onUnhandledEvent - focusMapOn: no place field in data");
+                Log.w(TAG, "onUnhandledEvent - setPlace: no place field in data");
                 e.printStackTrace();
             }
             return true;
