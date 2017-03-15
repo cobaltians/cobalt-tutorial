@@ -18,3 +18,15 @@
 	path = Android/app/src/main/assets/pubsub-plugin
 	url = https://github.com/Cobaltians-Plugins/Plugins-PubSub-Web.git
 	branch = develop
+[submodule "iOS/Cobalt Tutorial/Cobalt"]
+	path = iOS/Cobalt Tutorial/Cobalt
+	url = https://github.com/cobaltians/Cobalt-iOS.git
+	branch = develop
+[submodule "iOS/Cobalt Tutorial/PubSub-Plugin"]
+	path = iOS/Cobalt Tutorial/PubSub-Plugin
+	url = https://github.com/Cobaltians-Plugins/Plugins-PubSub-iOS.git
+	branch = develop
+[submodule "iOS/Cobalt Tutorial/FontAwesome-Font"]
+	path = iOS/Cobalt Tutorial/FontAwesome-Font
+	url = https://github.com/Cobaltians-Fonts/Fonts-FontAwesome-iOS.git
+	branch = develop

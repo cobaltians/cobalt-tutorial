@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE05C2DD1E79AA2400F20BB2 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = BE05C2DC1E79AA2400F20BB2 /* assets */; };
+		BEFEF81B1E79A1F300A7F7FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF81A1E79A1F300A7F7FB /* main.m */; };
+		BEFEF81E1E79A1F300A7F7FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF81D1E79A1F300A7F7FB /* AppDelegate.m */; };
+		BEFEF8211E79A1F300A7F7FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF8201E79A1F300A7F7FB /* ViewController.m */; };
+		BEFEF8241E79A1F300A7F7FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFEF8221E79A1F300A7F7FB /* Main.storyboard */; };
+		BEFEF8261E79A1F300A7F7FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEFEF8251E79A1F300A7F7FB /* Assets.xcassets */; };
+		BEFEF8291E79A1F300A7F7FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFEF8271E79A1F300A7F7FB /* LaunchScreen.storyboard */; };
+		BEFEF8461E79A44C00A7F7FB /* libCobalt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEFEF8431E79A42300A7F7FB /* libCobalt.a */; };
+		BEFEF8491E79A46A00A7F7FB /* Cobalt.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BEFEF8451E79A42300A7F7FB /* Cobalt.bundle */; };
+		BEFEF8531E79A4E500A7F7FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BEFEF84D1E79A4E500A7F7FB /* .gitignore */; };
+		BEFEF8541E79A4E500A7F7FB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BEFEF84E1E79A4E500A7F7FB /* LICENSE */; };
+		BEFEF8551E79A4E500A7F7FB /* PubSubPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF8501E79A4E500A7F7FB /* PubSubPlugin.m */; };
+		BEFEF8561E79A4E500A7F7FB /* PubSubReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF8521E79A4E500A7F7FB /* PubSubReceiver.m */; };
+		BEFEF85D1E79A53000A7F7FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BEFEF8581E79A53000A7F7FB /* .gitignore */; };
+		BEFEF85E1E79A53000A7F7FB /* FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF85A1E79A53000A7F7FB /* FontAwesome.m */; };
+		BEFEF85F1E79A53000A7F7FB /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEFEF85B1E79A53000A7F7FB /* FontAwesome.ttf */; };
+		BEFEF8601E79A53000A7F7FB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BEFEF85C1E79A53000A7F7FB /* LICENSE */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BEFEF8421E79A42300A7F7FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEFEF83C1E79A42300A7F7FB /* Cobalt.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE31EB1B1C3EC52100141B6E;
+			remoteInfo = Cobalt;
+		};
+		BEFEF8441E79A42300A7F7FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEFEF83C1E79A42300A7F7FB /* Cobalt.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEFF884A1C4541FD0063AA18;
+			remoteInfo = CobaltResources;
+		};
+		BEFEF8471E79A45D00A7F7FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEFEF83C1E79A42300A7F7FB /* Cobalt.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEFF882F1C3ED3BC0063AA18;
+			remoteInfo = Framework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE05C2DC1E79AA2400F20BB2 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../Android/app/src/main/assets; sourceTree = "<group>"; };
+		BEFEF8161E79A1F300A7F7FB /* Cobalt Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cobalt Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEFEF81A1E79A1F300A7F7FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BEFEF81C1E79A1F300A7F7FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BEFEF81D1E79A1F300A7F7FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BEFEF81F1E79A1F300A7F7FB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BEFEF8201E79A1F300A7F7FB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BEFEF8231E79A1F300A7F7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BEFEF8251E79A1F300A7F7FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BEFEF8281E79A1F300A7F7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BEFEF82A1E79A1F300A7F7FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEFEF83C1E79A42300A7F7FB /* Cobalt.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Cobalt.xcodeproj; path = Cobalt/Cobalt.xcodeproj; sourceTree = "<group>"; };
+		BEFEF84D1E79A4E500A7F7FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BEFEF84E1E79A4E500A7F7FB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BEFEF84F1E79A4E500A7F7FB /* PubSubPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubSubPlugin.h; sourceTree = "<group>"; };
+		BEFEF8501E79A4E500A7F7FB /* PubSubPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubSubPlugin.m; sourceTree = "<group>"; };
+		BEFEF8511E79A4E500A7F7FB /* PubSubReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubSubReceiver.h; sourceTree = "<group>"; };
+		BEFEF8521E79A4E500A7F7FB /* PubSubReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubSubReceiver.m; sourceTree = "<group>"; };
+		BEFEF8581E79A53000A7F7FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BEFEF8591E79A53000A7F7FB /* FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontAwesome.h; sourceTree = "<group>"; };
+		BEFEF85A1E79A53000A7F7FB /* FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontAwesome.m; sourceTree = "<group>"; };
+		BEFEF85B1E79A53000A7F7FB /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		BEFEF85C1E79A53000A7F7FB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEFEF8131E79A1F300A7F7FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEFEF8461E79A44C00A7F7FB /* libCobalt.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BEFEF80D1E79A1F300A7F7FB = {
+			isa = PBXGroup;
+			children = (
+				BE05C2DC1E79AA2400F20BB2 /* assets */,
+				BEFEF8181E79A1F300A7F7FB /* Cobalt Tutorial */,
+				BEFEF83B1E79A40D00A7F7FB /* Frameworks */,
+				BEFEF8171E79A1F300A7F7FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BEFEF8171E79A1F300A7F7FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEF8161E79A1F300A7F7FB /* Cobalt Tutorial.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEFEF8181E79A1F300A7F7FB /* Cobalt Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEF8381E79A2BE00A7F7FB /* AppDelegate */,
+				BEFEF8391E79A33200A7F7FB /* Controllers */,
+				BEFEF83A1E79A36900A7F7FB /* Design */,
+				BEFEF8191E79A1F300A7F7FB /* Supporting Files */,
+			);
+			path = "Cobalt Tutorial";
+			sourceTree = "<group>";
+		};
+		BEFEF8191E79A1F300A7F7FB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEF82A1E79A1F300A7F7FB /* Info.plist */,
+				BEFEF81A1E79A1F300A7F7FB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEFEF8381E79A2BE00A7F7FB /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEF81C1E79A1F300A7F7FB /* AppDelegate.h */,
+				BEFEF81D1E79A1F300A7F7FB /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		BEFEF8391E79A33200A7F7FB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEF81F1E79A1F300A7F7FB /* ViewController.h */,
+				BEFEF8201E79A1F300A7F7FB /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BEFEF83A1E79A36900A7F7FB /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEF8271E79A1F300A7F7FB /* LaunchScreen.storyboard */,
+				BEFEF8221E79A1F300A7F7FB /* Main.storyboard */,
+				BEFEF8251E79A1F300A7F7FB /* Assets.xcassets */,
+			);
+			name = Design;
+			sourceTree = "<group>";
+		};
+		BEFEF83B1E79A40D00A7F7FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEF83C1E79A42300A7F7FB /* Cobalt.xcodeproj */,
+				BEFEF8571E79A53000A7F7FB /* FontAwesome-Font */,
+				BEFEF84C1E79A4E500A7F7FB /* PubSub-Plugin */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEFEF83D1E79A42300A7F7FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEF8431E79A42300A7F7FB /* libCobalt.a */,
+				BEFEF8451E79A42300A7F7FB /* Cobalt.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEFEF84C1E79A4E500A7F7FB /* PubSub-Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEF84D1E79A4E500A7F7FB /* .gitignore */,
+				BEFEF84E1E79A4E500A7F7FB /* LICENSE */,
+				BEFEF84F1E79A4E500A7F7FB /* PubSubPlugin.h */,
+				BEFEF8501E79A4E500A7F7FB /* PubSubPlugin.m */,
+				BEFEF8511E79A4E500A7F7FB /* PubSubReceiver.h */,
+				BEFEF8521E79A4E500A7F7FB /* PubSubReceiver.m */,
+			);
+			path = "PubSub-Plugin";
+			sourceTree = "<group>";
+		};
+		BEFEF8571E79A53000A7F7FB /* FontAwesome-Font */ = {
+			isa = PBXGroup;
+			children = (
+				BEFEF8581E79A53000A7F7FB /* .gitignore */,
+				BEFEF8591E79A53000A7F7FB /* FontAwesome.h */,
+				BEFEF85A1E79A53000A7F7FB /* FontAwesome.m */,
+				BEFEF85B1E79A53000A7F7FB /* FontAwesome.ttf */,
+				BEFEF85C1E79A53000A7F7FB /* LICENSE */,
+			);
+			path = "FontAwesome-Font";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BEFEF8151E79A1F300A7F7FB /* Cobalt Tutorial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEFEF82D1E79A1F300A7F7FB /* Build configuration list for PBXNativeTarget "Cobalt Tutorial" */;
+			buildPhases = (
+				BEFEF8121E79A1F300A7F7FB /* Sources */,
+				BEFEF8131E79A1F300A7F7FB /* Frameworks */,
+				BEFEF8141E79A1F300A7F7FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEFEF8481E79A45D00A7F7FB /* PBXTargetDependency */,
+			);
+			name = "Cobalt Tutorial";
+			productName = "Cobalt Tutorial";
+			productReference = BEFEF8161E79A1F300A7F7FB /* Cobalt Tutorial.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEFEF80E1E79A1F300A7F7FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Cobaltians;
+				TargetAttributes = {
+					BEFEF8151E79A1F300A7F7FB = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9T96FT79U2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BEFEF8111E79A1F300A7F7FB /* Build configuration list for PBXProject "Cobalt Tutorial" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BEFEF80D1E79A1F300A7F7FB;
+			productRefGroup = BEFEF8171E79A1F300A7F7FB /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BEFEF83D1E79A42300A7F7FB /* Products */;
+					ProjectRef = BEFEF83C1E79A42300A7F7FB /* Cobalt.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				BEFEF8151E79A1F300A7F7FB /* Cobalt Tutorial */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BEFEF8431E79A42300A7F7FB /* libCobalt.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCobalt.a;
+			remoteRef = BEFEF8421E79A42300A7F7FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BEFEF8451E79A42300A7F7FB /* Cobalt.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Cobalt.bundle;
+			remoteRef = BEFEF8441E79A42300A7F7FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEFEF8141E79A1F300A7F7FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEFEF85D1E79A53000A7F7FB /* .gitignore in Resources */,
+				BEFEF85F1E79A53000A7F7FB /* FontAwesome.ttf in Resources */,
+				BEFEF8531E79A4E500A7F7FB /* .gitignore in Resources */,
+				BEFEF8291E79A1F300A7F7FB /* LaunchScreen.storyboard in Resources */,
+				BEFEF8261E79A1F300A7F7FB /* Assets.xcassets in Resources */,
+				BE05C2DD1E79AA2400F20BB2 /* assets in Resources */,
+				BEFEF8601E79A53000A7F7FB /* LICENSE in Resources */,
+				BEFEF8241E79A1F300A7F7FB /* Main.storyboard in Resources */,
+				BEFEF8541E79A4E500A7F7FB /* LICENSE in Resources */,
+				BEFEF8491E79A46A00A7F7FB /* Cobalt.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEFEF8121E79A1F300A7F7FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEFEF85E1E79A53000A7F7FB /* FontAwesome.m in Sources */,
+				BEFEF8211E79A1F300A7F7FB /* ViewController.m in Sources */,
+				BEFEF8551E79A4E500A7F7FB /* PubSubPlugin.m in Sources */,
+				BEFEF81E1E79A1F300A7F7FB /* AppDelegate.m in Sources */,
+				BEFEF8561E79A4E500A7F7FB /* PubSubReceiver.m in Sources */,
+				BEFEF81B1E79A1F300A7F7FB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEFEF8481E79A45D00A7F7FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Framework;
+			targetProxy = BEFEF8471E79A45D00A7F7FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BEFEF8221E79A1F300A7F7FB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEFEF8231E79A1F300A7F7FB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BEFEF8271E79A1F300A7F7FB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEFEF8281E79A1F300A7F7FB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BEFEF82B1E79A1F300A7F7FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BEFEF82C1E79A1F300A7F7FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BEFEF82E1E79A1F300A7F7FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9T96FT79U2;
+				INFOPLIST_FILE = "Cobalt Tutorial/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cobaltians.Cobalt-Tutorial";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BEFEF82F1E79A1F300A7F7FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9T96FT79U2;
+				INFOPLIST_FILE = "Cobalt Tutorial/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cobaltians.Cobalt-Tutorial";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEFEF8111E79A1F300A7F7FB /* Build configuration list for PBXProject "Cobalt Tutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEFEF82B1E79A1F300A7F7FB /* Debug */,
+				BEFEF82C1E79A1F300A7F7FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEFEF82D1E79A1F300A7F7FB /* Build configuration list for PBXNativeTarget "Cobalt Tutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEFEF82E1E79A1F300A7F7FB /* Debug */,
+				BEFEF82F1E79A1F300A7F7FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BEFEF80E1E79A1F300A7F7FB /* Project object */;
+}
