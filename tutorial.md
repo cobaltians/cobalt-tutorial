@@ -1,17 +1,20 @@
 In this tutorial we will create an hybrid event app with Cobalt. 
 
-Basically it will present :
+Basically it will present:
+
 - a list of events on the master page
 - a page to create new events.
 
-In this tutorial we will use : 
+In this tutorial we will use: 
+
 - cobalt native bars
 - cobalt native navigation
 - cobalt.storage for the data layer
 - a cobalt plugin for user feedback
 - create a real hybrid view with a map
 
-To checkout the solution for each step : 
+To checkout the solution for each step: 
+
 - clean your local changes with `git stash && git stash drop`
 - checkout tag `step-X` where X is the number of the step. For example : `git checkout step-1`
 
@@ -23,7 +26,7 @@ To checkout the solution for each step :
 - Try in the emulator or device
 
 
-Documentation links : [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cobalt.conf), [cobalt.init](https://github.com/cobaltians/Cobalt/wiki/cobalt.init), [debugInBrowser](https://github.com/cobaltians/cobalt/wiki/Debugging-in-the-browser)
+Documentation links: [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cobalt.conf), [cobalt.init](https://github.com/cobaltians/Cobalt/wiki/cobalt.init), [debugInBrowser](https://github.com/cobaltians/cobalt/wiki/Debugging-in-the-browser)
 
 
 # Step 2
@@ -37,13 +40,12 @@ Notes :
 You can use icon asset named "create" for the create button 
 
 
-Documentation links : [nativeBars](https://github.com/cobaltians/cobalt/wiki/nativeBars), [navigation_push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push)
+Documentation links: [nativeBars](https://github.com/cobaltians/cobalt/wiki/nativeBars), [navigation_push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push)
 
 # Step 3
 
 - Add a "Place" field in the event form. 
 - Send event `setPlace` with a data like this `{ place : 'Brest'}` where "Brest" is the place entered by the user in the place field.
-- Change the event controller to be the `withMap` native controller
 - Catch the `setPlace` event in the native controller and update Google Map location.
 
 Notes : 
@@ -53,23 +55,21 @@ setPlace(place)
 ```
 to update the google map location on iOS use code below : 
 ```
-[self setPlace: place]
+[self setPlace:place]
 ```
 
-Documentation links : [events](https://github.com/cobaltians/cobalt/wiki/Introduction-to-Cobalt-Events), [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cobalt.conf)
+Documentation links: [events](https://github.com/cobaltians/cobalt/wiki/Introduction-to-Cobalt-Events), [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cobalt.conf)
 
 
 # Step 4
 
-- On the native side this time, the map location change  
-- Add a "Place" field in the event form. 
 - On the native side this time, send event `setPlace` with a data like this `{ place : 'Brest'}` when the location is changed on the native map
 - Catch the `setPlace` event in the web page and update the field
 
-Notes : 
+Notes: 
 Map location changes are already catched in the `onPlaceChanged` Just add the event to the web.
 
-Documentation links : [events](https://github.com/cobaltians/cobalt/wiki/Introduction-to-Cobalt-Events)
+Documentation links: [events](https://github.com/cobaltians/cobalt/wiki/Introduction-to-Cobalt-Events)
 
 
 # Step 5
@@ -81,11 +81,11 @@ Documentation links : [events](https://github.com/cobaltians/cobalt/wiki/Introdu
  - And pop to the previous page with navigate.pop.
 
  
-Notes : 
+Notes: 
 The list of events is an array in key `events`of cobalt.storage.
 You can use icon asset named "save" for the save button
  
-Documentation links :  [cobalt.storage](https://github.com/cobaltians/cobalt/wiki/LocalStorage), [toasts](https://github.com/cobaltians/cobalt/wiki/toasts), [navigation_pop](https://github.com/cobaltians/cobalt/wiki/Navigation_Pop), [Android back event](https://github.com/cobaltians/cobalt/wiki/backEvent)
+Documentation links:  [cobalt.storage](https://github.com/cobaltians/cobalt/wiki/LocalStorage), [toasts](https://github.com/cobaltians/cobalt/wiki/toasts), [navigation_pop](https://github.com/cobaltians/cobalt/wiki/Navigation_Pop), [Android back event](https://github.com/cobaltians/cobalt/wiki/backEvent)
 
 # Step 6
 
@@ -102,17 +102,17 @@ Documentation links : [events lifecycle](https://github.com/cobaltians/cobalt/wi
 - Catch these data in the `event.html` page and fill the form
 - Update the save method to save this current event instead of adding a new one.
 
-Documentation links : [navigation push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push), [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events) 
+Documentation links: [navigation push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push), [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events) 
 
 # Step 8
 
 - Use pubsub plugin to edit the event and avoid refreshing the whole list
 
-Notes :
+Notes:
 
 To update the event DOM node in the master page you can use `app.eventList.updateEvent(event);` 
 
-Documentation links : [pubsub plugin](https://github.com/Cobaltians-Plugins/Plugins-PubSub)
+Documentation links: [pubsub plugin](https://github.com/Cobaltians-Plugins/Plugins-PubSub)
 
 
 

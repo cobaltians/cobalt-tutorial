@@ -99,6 +99,7 @@ public class CreateActivity extends CobaltActivity implements OnMapReadyCallback
             mMarker.setPosition(latLng);
             mMarker.setTitle(place);
         }
+
         onPlaceChanged(place);
     }
 
@@ -107,18 +108,6 @@ public class CreateActivity extends CobaltActivity implements OnMapReadyCallback
      * HELPERS
      *
      **********************************************************************************************/
-
-    void onPlaceChanged(String place) {
-        //Add event to web here.
-        try {
-            JSONObject data = new JSONObject();
-            data.put("place", place);
-            ((CreateFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container)).sendEvent("setPlace", data, null);
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
 
     void setPlace(String place) {
         try {
@@ -143,6 +132,18 @@ public class CreateActivity extends CobaltActivity implements OnMapReadyCallback
         catch (IOException e) {
             Toast.makeText(this, "Network unavailable", Toast.LENGTH_SHORT).show();
             Log.i(TAG, "setPlace: network unavailable");
+            e.printStackTrace();
+        }
+    }
+
+    void onPlaceChanged(String place) {
+        // Add event to web here.
+        try {
+            JSONObject data = new JSONObject();
+            data.put("place", place);
+            ((CreateFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container)).sendEvent("setPlace", data, null);
+        }
+        catch (JSONException e) {
             e.printStackTrace();
         }
     }
