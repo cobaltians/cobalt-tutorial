@@ -13,7 +13,7 @@
         <scene sceneID="mkg-Ns-bxG">
             <objects>
                 <navigationController id="OBR-gZ-bka" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gTe-wb-wl1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gTe-wb-wl1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -44,16 +44,27 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="O5N-6b-53f"/>
                                 </connections>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InC-rg-P8V">
+                                <rect key="frame" x="151" y="318.5" width="72" height="30"/>
+                                <state key="normal" title="Show map"/>
+                                <connections>
+                                    <action selector="showMap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eED-o8-tW8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aW2-y1-m4O" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="1kh-Ar-dnr"/>
+                            <constraint firstItem="InC-rg-P8V" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BEq-GI-P6m"/>
                             <constraint firstItem="aW2-y1-m4O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EP5-Fm-Ml1"/>
                             <constraint firstItem="aW2-y1-m4O" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OId-tX-DV4"/>
+                            <constraint firstItem="InC-rg-P8V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OKF-WA-uoO"/>
                             <constraint firstItem="aW2-y1-m4O" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QEc-fl-awk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9fH-mF-eeA"/>
+                    <navigationItem key="navigationItem" id="9fH-mF-eeA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3pd-KT-8aa"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="aW2-y1-m4O" id="WaN-Tf-XfY"/>
                     </connections>

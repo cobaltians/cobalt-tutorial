@@ -23,7 +23,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        NSString *resourcePath = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/assets/common/"];
+        NSString *resourcePath = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/common/"];
         [Cobalt setResourcePath:resourcePath];
         
         [self initWithPage:@"index.html"
@@ -50,6 +50,12 @@
 #pragma mark COBALT
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
+- (IBAction)showMap:(id)sender {
+    [self.navigationController pushViewController:[Cobalt cobaltViewControllerForController:@"event"
+                                                                                    andPage:@"event.html"]
+                                         animated:YES];
+}
 
 - (BOOL)onUnhandledMessage:(NSDictionary *)message {
     return NO;

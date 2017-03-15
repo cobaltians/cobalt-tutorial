@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import "const.h"
 #import <Cobalt/Cobalt.h>
 
 @interface ViewController : CobaltViewController <CobaltDelegate>

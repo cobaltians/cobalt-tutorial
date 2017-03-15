@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE05C2DD1E79AA2400F20BB2 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = BE05C2DC1E79AA2400F20BB2 /* assets */; };
+		BE05C2E11E79ABEF00F20BB2 /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05C2DF1E79ABEF00F20BB2 /* CreateViewController.m */; };
+		BE05C2E21E79ABEF00F20BB2 /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE05C2E01E79ABEF00F20BB2 /* CreateViewController.xib */; };
+		BE05C2E81E79AEB200F20BB2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE05C2E71E79AEB200F20BB2 /* MapKit.framework */; };
+		BE05C2ED1E79B5A200F20BB2 /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05C2EC1E79B5A200F20BB2 /* PlaceAnnotation.m */; };
+		BE7A59BF1E79B9A00000BDFF /* common in Resources */ = {isa = PBXBuildFile; fileRef = BE7A59BD1E79B9A00000BDFF /* common */; };
+		BE7A59C01E79B9A00000BDFF /* pubsub-plugin in Resources */ = {isa = PBXBuildFile; fileRef = BE7A59BE1E79B9A00000BDFF /* pubsub-plugin */; };
+		BE7A59C61E79BA660000BDFF /* platform in Resources */ = {isa = PBXBuildFile; fileRef = BE7A59C51E79BA660000BDFF /* platform */; };
 		BEFEF81B1E79A1F300A7F7FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF81A1E79A1F300A7F7FB /* main.m */; };
 		BEFEF81E1E79A1F300A7F7FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF81D1E79A1F300A7F7FB /* AppDelegate.m */; };
 		BEFEF8211E79A1F300A7F7FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF8201E79A1F300A7F7FB /* ViewController.m */; };
@@ -51,7 +57,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BE05C2DC1E79AA2400F20BB2 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../Android/app/src/main/assets; sourceTree = "<group>"; };
+		BE05C2DE1E79ABEF00F20BB2 /* CreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateViewController.h; sourceTree = "<group>"; };
+		BE05C2DF1E79ABEF00F20BB2 /* CreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateViewController.m; sourceTree = "<group>"; };
+		BE05C2E01E79ABEF00F20BB2 /* CreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateViewController.xib; sourceTree = "<group>"; };
+		BE05C2E41E79AD5100F20BB2 /* const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
+		BE05C2E71E79AEB200F20BB2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BE05C2EB1E79B5A200F20BB2 /* PlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceAnnotation.h; sourceTree = "<group>"; };
+		BE05C2EC1E79B5A200F20BB2 /* PlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceAnnotation.m; sourceTree = "<group>"; };
+		BE7A59BD1E79B9A00000BDFF /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; name = common; path = ../../Android/app/src/main/assets/common; sourceTree = "<group>"; };
+		BE7A59BE1E79B9A00000BDFF /* pubsub-plugin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pubsub-plugin"; path = "../../Android/app/src/main/assets/pubsub-plugin"; sourceTree = "<group>"; };
+		BE7A59C51E79BA660000BDFF /* platform */ = {isa = PBXFileReference; lastKnownFileType = folder; name = platform; path = ../platform; sourceTree = "<group>"; };
 		BEFEF8161E79A1F300A7F7FB /* Cobalt Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cobalt Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFEF81A1E79A1F300A7F7FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BEFEF81C1E79A1F300A7F7FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE05C2E81E79AEB200F20BB2 /* MapKit.framework in Frameworks */,
 				BEFEF8461E79A44C00A7F7FB /* libCobalt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,10 +104,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE05C2EA1E79B59500F20BB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE05C2EB1E79B5A200F20BB2 /* PlaceAnnotation.h */,
+				BE05C2EC1E79B5A200F20BB2 /* PlaceAnnotation.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BE05C2EF1E79B96F00F20BB2 /* www */ = {
+			isa = PBXGroup;
+			children = (
+				BE7A59BD1E79B9A00000BDFF /* common */,
+				BE7A59C51E79BA660000BDFF /* platform */,
+				BE7A59BE1E79B9A00000BDFF /* pubsub-plugin */,
+			);
+			name = www;
+			sourceTree = "<group>";
+		};
 		BEFEF80D1E79A1F300A7F7FB = {
 			isa = PBXGroup;
 			children = (
-				BE05C2DC1E79AA2400F20BB2 /* assets */,
+				BE05C2EF1E79B96F00F20BB2 /* www */,
 				BEFEF8181E79A1F300A7F7FB /* Cobalt Tutorial */,
 				BEFEF83B1E79A40D00A7F7FB /* Frameworks */,
 				BEFEF8171E79A1F300A7F7FB /* Products */,
@@ -111,6 +146,7 @@
 			children = (
 				BEFEF8381E79A2BE00A7F7FB /* AppDelegate */,
 				BEFEF8391E79A33200A7F7FB /* Controllers */,
+				BE05C2EA1E79B59500F20BB2 /* Views */,
 				BEFEF83A1E79A36900A7F7FB /* Design */,
 				BEFEF8191E79A1F300A7F7FB /* Supporting Files */,
 			);
@@ -122,6 +158,7 @@
 			children = (
 				BEFEF82A1E79A1F300A7F7FB /* Info.plist */,
 				BEFEF81A1E79A1F300A7F7FB /* main.m */,
+				BE05C2E41E79AD5100F20BB2 /* const.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,6 +177,8 @@
 			children = (
 				BEFEF81F1E79A1F300A7F7FB /* ViewController.h */,
 				BEFEF8201E79A1F300A7F7FB /* ViewController.m */,
+				BE05C2DE1E79ABEF00F20BB2 /* CreateViewController.h */,
+				BE05C2DF1E79ABEF00F20BB2 /* CreateViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -149,6 +188,7 @@
 			children = (
 				BEFEF8271E79A1F300A7F7FB /* LaunchScreen.storyboard */,
 				BEFEF8221E79A1F300A7F7FB /* Main.storyboard */,
+				BE05C2E01E79ABEF00F20BB2 /* CreateViewController.xib */,
 				BEFEF8251E79A1F300A7F7FB /* Assets.xcassets */,
 			);
 			name = Design;
@@ -157,6 +197,7 @@
 		BEFEF83B1E79A40D00A7F7FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE05C2E71E79AEB200F20BB2 /* MapKit.framework */,
 				BEFEF83C1E79A42300A7F7FB /* Cobalt.xcodeproj */,
 				BEFEF8571E79A53000A7F7FB /* FontAwesome-Font */,
 				BEFEF84C1E79A4E500A7F7FB /* PubSub-Plugin */,
@@ -232,6 +273,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9T96FT79U2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -283,10 +329,13 @@
 			files = (
 				BEFEF85D1E79A53000A7F7FB /* .gitignore in Resources */,
 				BEFEF85F1E79A53000A7F7FB /* FontAwesome.ttf in Resources */,
+				BE7A59C01E79B9A00000BDFF /* pubsub-plugin in Resources */,
 				BEFEF8531E79A4E500A7F7FB /* .gitignore in Resources */,
+				BE7A59C61E79BA660000BDFF /* platform in Resources */,
 				BEFEF8291E79A1F300A7F7FB /* LaunchScreen.storyboard in Resources */,
+				BE7A59BF1E79B9A00000BDFF /* common in Resources */,
 				BEFEF8261E79A1F300A7F7FB /* Assets.xcassets in Resources */,
-				BE05C2DD1E79AA2400F20BB2 /* assets in Resources */,
+				BE05C2E21E79ABEF00F20BB2 /* CreateViewController.xib in Resources */,
 				BEFEF8601E79A53000A7F7FB /* LICENSE in Resources */,
 				BEFEF8241E79A1F300A7F7FB /* Main.storyboard in Resources */,
 				BEFEF8541E79A4E500A7F7FB /* LICENSE in Resources */,
@@ -304,6 +353,8 @@
 				BEFEF85E1E79A53000A7F7FB /* FontAwesome.m in Sources */,
 				BEFEF8211E79A1F300A7F7FB /* ViewController.m in Sources */,
 				BEFEF8551E79A4E500A7F7FB /* PubSubPlugin.m in Sources */,
+				BE05C2E11E79ABEF00F20BB2 /* CreateViewController.m in Sources */,
+				BE05C2ED1E79B5A200F20BB2 /* PlaceAnnotation.m in Sources */,
 				BEFEF81E1E79A1F300A7F7FB /* AppDelegate.m in Sources */,
 				BEFEF8561E79A4E500A7F7FB /* PubSubReceiver.m in Sources */,
 				BEFEF81B1E79A1F300A7F7FB /* main.m in Sources */,
