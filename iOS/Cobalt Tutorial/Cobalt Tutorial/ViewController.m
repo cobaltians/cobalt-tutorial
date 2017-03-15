@@ -51,12 +51,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (IBAction)showMap:(id)sender {
-    [self.navigationController pushViewController:[Cobalt cobaltViewControllerForController:@"event"
-                                                                                    andPage:@"event.html"]
-                                         animated:YES];
-}
-
 - (BOOL)onUnhandledMessage:(NSDictionary *)message {
     return NO;
 }
