@@ -42,15 +42,6 @@
           debug: true,
           //debugInBrowser: true,
           events: {
-            //You can try this in browser with cobalt.events.pullToRefresh(null, "PTRCallback");
-            "pullToRefresh": function(data, callback) {
-              eventList.refresh();
-              cobalt.sendCallback(callback);
-            },
-            //You can try this in browser with cobalt.events.onPageShown();
-            "onPageShown": function(data, callback) {
-              eventList.refresh();
-            }
           }
         });
 
