@@ -43,19 +43,6 @@
           //debugInBrowser: true,
           events: {
 
-            //You can try this in browser with
-            // cobalt.events.onPageShown({"id":4,"title":"Cobalt workshop","date":"2015-05-22","place":"Le Mans"});
-            onPageShown: function(data){
-              if (data) {
-                editedEvent = data;
-                $('#title').val(data.title);
-                $('#date').val(data.date);
-                $('#place').val(data.place);
-                //center native map on place
-                cobalt.sendEvent("setPlace", { place : data.place });
-                cobalt.nativeBars.setBarContent({ title : "Edit event"});
-              }
-            },
             //You can try this in browser with cobalt.events.setPlace({place : 'Brest'})
             setPlace: function(data){
               $('#place').val(data.place);
@@ -74,42 +61,21 @@
 
         $('#eventForm').on('submit', function(e){
           e.preventDefault();
-          if (editedEvent) {
-            cobalt.alert({
-              title: 'Save ?',
-              message: "Are you sure you want to override this event ?",
-              buttons: ["Yes", "No"],
-              callback: function(params) {
-                if (params.index === 0) {
-                  doSubmit();
-                }
-              }
-            });
-          } else {
-            doSubmit();
-          }
+          doSubmit();
         });
 
         function doSubmit(){
+          //add new event to the list
+          var events = cobalt.storage.get("events");
           var newEvent = {
+            id : events.length + 1, //will break if deleting items one day.
             title : $('#title').val(),
             date : $('#date').val(),
             place : $('#place').val()
           };
-          if (editedEvent) {
-            newEvent.id = editedEvent.id;
-            //save new event
-            eventList.saveEvent(newEvent);
-            cobalt.toast('Event saved');
-            
-          } else {
-            //add new event to the list
-            var events = cobalt.storage.get("events");
-            newEvent.id = events.length + 1; //will break if deleting items one day.
-            events.unshift(newEvent);
-            cobalt.storage.set("events", events);
-            cobalt.toast('Event created');
-          }
+          events.unshift(newEvent);
+          cobalt.storage.set("events", events);
+          cobalt.toast('Event created');
           //pop back to the list view.
           cobalt.navigate.pop();
         }
