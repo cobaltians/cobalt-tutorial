@@ -131,9 +131,6 @@
 
 - (void)onPlaceChanged:(NSString *) place {
     // Add event to web here.
-    [self sendEvent:@"setPlace"
-           withData:@{@"place": place}
-        andCallback:nil];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
