@@ -1,9 +1,20 @@
 package org.cobaltians.tutorial;
 
+import android.util.Log;
+
 import org.cobaltians.cobalt.fragments.CobaltFragment;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CreateFragment extends CobaltFragment {
+
+    protected static final String TAG = CreateFragment.class.getSimpleName();
+
+    /***********************************************************************************************
+     *
+     * COBALT
+     *
+     **********************************************************************************************/
 
     @Override
     protected boolean onUnhandledCallback(String callback, JSONObject data) {
@@ -12,6 +23,16 @@ public class CreateFragment extends CobaltFragment {
 
     @Override
     protected boolean onUnhandledEvent(String event, JSONObject data, String callback) {
+        if ("focusMapOn".equals(event)) {
+            try {
+                ((CreateActivity) mContext).focusOnThisFuckingPlace(data.getString("place"));
+            }
+            catch (JSONException e) {
+                Log.w(TAG, "onUnhandledEvent - focusMapOn: no place field in data");
+                e.printStackTrace();
+            }
+            return true;
+        }
         return false;
     }
 
