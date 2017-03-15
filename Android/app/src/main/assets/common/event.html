@@ -50,38 +50,6 @@
           }
         });
 
-        //You can try this in browser with cobalt.nativeBars.handler('save')
-        cobalt.nativeBars.setEventListener(function(itemName) {
-          switch (itemName) {
-            case "save":
-              $('#eventForm').trigger("submit");
-              break;
-          }
-        });
-
-        $('#eventForm').on('submit', function(e){
-          e.preventDefault();
-          doSubmit();
-        });
-
-        function doSubmit(){
-          //add new event to the list
-          var events = cobalt.storage.get("events");
-          var newEvent = {
-            id : events.length + 1, //will break if deleting items one day.
-            title : $('#title').val(),
-            date : $('#date').val(),
-            place : $('#place').val()
-          };
-          events.unshift(newEvent);
-          cobalt.storage.set("events", events);
-          cobalt.toast('Event created');
-          //pop back to the list view.
-          cobalt.navigate.pop();
-        }
-
-
-
         $('#place').on("change, keyup", function(){
           cobalt.sendEvent("setPlace", {
             place : $('#place').val()
