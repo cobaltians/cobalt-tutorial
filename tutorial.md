@@ -13,6 +13,11 @@ In this tutorial we will use:
 - a cobalt plugin for user feedback
 - create a real hybrid view with a map
 
+Download this tutorial :
+```
+git clone --recursive https://github.com/cobaltians/cobalt-tutorial.git
+```
+
 To checkout the solution for each step: 
 
 - clean your local changes with `git stash && git stash drop`
