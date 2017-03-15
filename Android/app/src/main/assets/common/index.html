@@ -48,9 +48,9 @@
               cobalt.sendCallback(callback);
             },
             //You can try this in browser with cobalt.events.onPageShown();
-            //"onPageShown": function(data, callback) {
-            //  eventList.refresh();
-            //}
+            "onPageShown": function(data, callback) {
+              eventList.refresh();
+            }
           }
         });
 
@@ -61,16 +61,6 @@
                   cobalt.navigate.push({page: "event.html", controller: "event"});
                 break;
             }
-        });
-
-        //You can try this in browser with cobalt.callbacks[0]({id:1, title:"Hop"})
-        cobalt.subscribe('eventModified', function(event){
-          eventList.updateEventNode(event);
-        });
-
-        //You can try this in browser with cobalt.callbacks[1]({id:42, title:"Hop"})
-        cobalt.subscribe('eventAdded', function(event){
-          eventList.refresh();
         });
 
         eventList.onItemTouch(function(event){
