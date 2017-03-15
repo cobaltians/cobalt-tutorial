@@ -1,4 +1,4 @@
-app.eventList = {
+var eventList = {
   //will host compiled handlebars templates
   templates: {},
   init: function() {
@@ -8,7 +8,7 @@ app.eventList = {
     //get events from storage or set default
     var events = cobalt.storage.get("events");
     if (!events) {
-      events = app.defaultData;
+      events = defaultData;
       cobalt.storage.set("events", events);
     }
 
@@ -41,11 +41,35 @@ app.eventList = {
     //set HTML from template + events data
     $('#eventList').html(this.templates.eventList({ events: events }));
   },
-  updateEvent: function(event) {
+  saveEvent: function(event) {
+    if (event && event.id){
+      var events = cobalt.storage.get("events");
+      $.each(events, function(i, item) {
+        if (item.id === event.id) {
+          events[i] = event;
+          cobalt.storage.set("events", events);
+          return false;//break the loop.
+        }
+      });
+    }
+  },
+  updateEventNode: function(event) {
     //find event in dom and replace it with new event data
     var eventItem = $('#event_'+ event.id);
     if (eventItem) {
       eventItem.replaceWith(this.templates.eventItem(event))
     }
+  },
+  onItemTouch:function(handler) {
+    $('#eventList').on('click', '.eventItem', function(){
+      var id = parseInt($(this).attr('data-id'), 10);
+      var events = cobalt.storage.get("events");
+      $.each(events, function(i, item){
+        if (item.id === id) {
+          handler(item);
+          return false;//break the loop.
+        }
+      });
+    });
   }
 };
