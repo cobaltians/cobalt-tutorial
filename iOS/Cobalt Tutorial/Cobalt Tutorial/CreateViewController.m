@@ -92,7 +92,31 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 - (void)setPlace:(NSString *)place {
-    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:place
+                 completionHandler:^(NSArray* placemarks, NSError* error){
+                     if (error != nil) {
+                         NSLog(@"CreateViewController - setPlace:%@ error", place);
+                     }
+                     else if (placemarks.count > 0) {
+                         CLPlacemark *placemark = placemarks[0];
+                         
+                         if (_annotation == nil) {
+                             _annotation = [[PlaceAnnotation alloc] init];
+                         }
+                         _annotation.coordinate = placemark.location.coordinate;
+                         [_mapView addAnnotation:_annotation];
+                         
+                         [_mapView setCamera:[MKMapCamera cameraLookingAtCenterCoordinate:placemark.location.coordinate
+                                                                             fromDistance:300000.0
+                                                                                    pitch:0.0
+                                                                                  heading:0.0]
+                                    animated:YES];
+                     }
+                     else {
+                         NSLog(@"CreateViewController - setPlace:%@ not found", place);
+                     }
+                 }];
 }
 
 - (void)onPlaceChanged:(NSString *) place {
@@ -110,12 +134,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
-    /*
-    _annotation = [[PlaceAnnotation alloc] init];
-    _annotation.coordinate = CLLocationCoordinate2DMake(48.732041, -3.459063);
-    _annotation.title = @"Lannion";
-    [_mapView addAnnotation:_annotation];
-    */
     [_mapView setCamera:[MKMapCamera cameraLookingAtCenterCoordinate:CLLocationCoordinate2DMake(48.732041, -3.459063)
                                                         fromDistance:300000.0
                                                                pitch:0.0
@@ -129,7 +147,26 @@
 
 - (void)onMapLongPress:(UILongPressGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateBegan) {
-        [self onPlaceChanged:@"Unknown"];
+        CGPoint locationInMap = [sender locationInView:_mapView];
+        CLLocationCoordinate2D coordinatesFromMap = [_mapView convertPoint:locationInMap
+                                                      toCoordinateFromView:_mapView];
+        
+        if (_annotation == nil) {
+            _annotation = [[PlaceAnnotation alloc] init];
+        }
+        _annotation.coordinate = coordinatesFromMap;
+        [_mapView addAnnotation:_annotation];
+        
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinatesFromMap.latitude
+                                                          longitude:coordinatesFromMap.longitude];
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder reverseGeocodeLocation:location
+                       completionHandler:^(NSArray* placemarks, NSError* error){
+                           if ([placemarks count] > 0) {
+                               CLPlacemark *placemark = placemarks[0];
+                               [self onPlaceChanged:placemark.locality];;
+                           }
+                       }];
     }
 }
 
