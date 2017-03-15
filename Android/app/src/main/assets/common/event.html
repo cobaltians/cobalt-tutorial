@@ -102,13 +102,16 @@
             eventList.saveEvent(newEvent);
             //and notice the previous page with new data
             cobalt.publish('eventModified', newEvent);
-
+            cobalt.toast('Event saved');
+            
           } else {
             //add new event to the list
             var events = cobalt.storage.get("events");
             newEvent.id = events.length + 1; //will break if deleting items one day.
             events.unshift(newEvent);
             cobalt.storage.set("events", events);
+            cobalt.toast('Event created');
+
           }
           //pop back to the list view.
           cobalt.navigate.pop();
