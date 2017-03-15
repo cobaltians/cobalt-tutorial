@@ -69,23 +69,6 @@
 - (BOOL)onUnhandledEvent:(NSString *)event
                 withData:(NSDictionary *)data
              andCallback:(NSString *)callback {
-    if ([@"setPlace" isEqualToString:event]) {
-        if (data != nil) {
-            NSString *place = [data objectForKey:@"place"];
-            if (place != nil) {
-                [self setPlace:place];
-            }
-            else {
-                NSLog(@"CreateViewController - onUnhandledEvent:%@ missing place field", event);
-            }
-        }
-        else {
-            NSLog(@"CreateViewController - onUnhandledEvent:%@ empty data", event);
-        }
-        
-        return YES;
-    }
-    
     return NO;
 }
 
