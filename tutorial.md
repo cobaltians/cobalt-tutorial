@@ -27,7 +27,7 @@ To checkout the solution for each step:
 
 Time to start !
 
-- First, checkout the step 0 code `git checkout step-1`
+- First, checkout the step 0 code `git checkout step-0`
 - Have a look around at native and web files.
 
 
