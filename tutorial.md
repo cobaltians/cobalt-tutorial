@@ -21,8 +21,9 @@ To checkout the solution for each step :
 - Create the cobalt.conf
 - Try in a web browser
 - Try in the emulator or device
-Documentation links : [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cobalt.conf), [cobalt.init](https://github.com/cobaltians/Cobalt/wiki/cobalt.init), [debugInBrowser](https://github.com/cobaltians/cobalt/wiki/Debugging-in-the-browser)
 
+
+Documentation links : [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cobalt.conf), [cobalt.init](https://github.com/cobaltians/Cobalt/wiki/cobalt.init), [debugInBrowser](https://github.com/cobaltians/cobalt/wiki/Debugging-in-the-browser)
 
 
 # Step 2
@@ -39,6 +40,26 @@ You can use icon asset named "create" for the create button
 Documentation links : [nativeBars](https://github.com/cobaltians/cobalt/wiki/nativeBars), [navigation_push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push)
 
 # Step 3
+
+- Add a "Place" field in the event form. 
+- Send event `focusMapOn` with a data like this `{ place : 'Brest'}` where "Brest" is the place entered by the user in the place field.
+- Change the event controller to be the `withMap` native controller
+- Catch the `focusMapOn` event in this controller and update Google Map location.
+
+Notes : 
+to update the google map location on Android use code below : 
+```
+focusOnThisFuckingPlace(place)
+```
+to update the google map location on iOS use code below : 
+```
+[self focusOnThisFuckingPlace: place]
+```
+
+Documentation links : [events](https://github.com/cobaltians/cobalt/wiki/Introduction-to-Cobalt-Events), [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cobalt.conf)
+
+
+# Step 4
  
  - Add title and save button to the create page
  - Catch the save button and trigger the form submit
@@ -53,7 +74,7 @@ You can use icon asset named "save" for the save button
  
 Documentation links :  [cobalt.storage](https://github.com/cobaltians/cobalt/wiki/LocalStorage), [toasts](https://github.com/cobaltians/cobalt/wiki/toasts), [navigation_pop](https://github.com/cobaltians/cobalt/wiki/Navigation_Pop), [Android back event](https://github.com/cobaltians/cobalt/wiki/backEvent)
 
-# Step 4
+# Step 5
 
 - Add pull to refresh feature on the master page to refresh content.
 - Refresh the master page list automatically when coming back.
@@ -61,7 +82,7 @@ Documentation links :  [cobalt.storage](https://github.com/cobaltians/cobalt/wik
 Documentation links : [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events), [pullToRefresh](https://github.com/cobaltians/cobalt/wiki/PullToRefresh) 
 
 
-# Step 5
+# Step 6
 
 - Catch the clic on an event in the master view
 - Push the `event.html` page with data to edit
@@ -70,29 +91,15 @@ Documentation links : [events lifecycle](https://github.com/cobaltians/cobalt/wi
 
 Documentation links : [navigation push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push), [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events) 
 
-# Step 6
+# Step 7
 
 - Use pubsub plugin to edit the event and avoid refreshing the whole list
 
+Notes :
+
+To update the event DOM node in the master page you can use `app.eventList.updateEvent(event);` 
+
 Documentation links : [pubsub plugin](https://github.com/Cobaltians-Plugins/Plugins-PubSub)
 
-# Step 7
-
-- Add a "Place" field in the event form. 
-- Send event `focusMapOn` with a data like this `{ place : 'Brest'}` where "Brest" is the place entered by the user in the place field.
-- Change the event controller to be the `withMap` native controller
-- Catch the `focusMapOn` event in this controller and update Google Map location.
-
-Notes : 
-to update the google map location on Android use code below : 
-```
-Google.myAss.focusOnThisFuckingPlace(place)
-```
-to update the google map location on iOS use code below : 
-```
-Google.myAss.focusOnThisFuckingPlace(place)
-```
-
-Documentation links : [events](https://github.com/cobaltians/cobalt/wiki/Introduction-to-Cobalt-Events), [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cobalt.conf)
 
 
