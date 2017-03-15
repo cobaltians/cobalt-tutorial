@@ -74,17 +74,7 @@ public class CreateActivity extends CobaltActivity implements OnMapReadyCallback
         mMap.setOnMapLongClickListener(this);
 
         LatLng latLng = new LatLng(48.732041, -3.459063);
-        mMarker = mMap.addMarker(new MarkerOptions().position(latLng).title("Lannion"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 7));
-
-        try {
-            JSONObject data = new JSONObject();
-            data.put("place", "Lannion");
-            ((CreateFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container)).sendEvent("setPlace", data, null);
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -102,9 +92,24 @@ public class CreateActivity extends CobaltActivity implements OnMapReadyCallback
             e.printStackTrace();
         }
 
-        mMarker.setPosition(latLng);
-        mMarker.setTitle(place);
+        if (mMarker == null) {
+            mMarker = mMap.addMarker(new MarkerOptions().position(latLng).title(place));
+        }
+        else {
+            mMarker.setPosition(latLng);
+            mMarker.setTitle(place);
+        }
+        onPlaceChanged(place);
+    }
 
+    /***********************************************************************************************
+     *
+     * HELPERS
+     *
+     **********************************************************************************************/
+
+    void onPlaceChanged(String place) {
+        //Add event to web here.
         try {
             JSONObject data = new JSONObject();
             data.put("place", place);
@@ -115,21 +120,20 @@ public class CreateActivity extends CobaltActivity implements OnMapReadyCallback
         }
     }
 
-    /***********************************************************************************************
-     *
-     * HELPERS
-     *
-     **********************************************************************************************/
-
-    void focusOnThisFuckingPlace(String place) {
+    void setPlace(String place) {
         try {
             List<Address> addresses = new Geocoder(this).getFromLocationName(place, 1);
             if (! addresses.isEmpty()) {
                 Address address = addresses.get(0);
 
                 LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-                mMarker.setPosition(latLng);
-                mMarker.setTitle(place);
+                if (mMarker == null) {
+                    mMarker = mMap.addMarker(new MarkerOptions().position(latLng).title(place));
+                }
+                else {
+                    mMarker.setPosition(latLng);
+                    mMarker.setTitle(place);
+                }
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             }
             else {
@@ -138,7 +142,7 @@ public class CreateActivity extends CobaltActivity implements OnMapReadyCallback
         }
         catch (IOException e) {
             Toast.makeText(this, "Network unavailable", Toast.LENGTH_SHORT).show();
-            Log.i(TAG, "focusOnThisFuckingPlace: network unavailable");
+            Log.i(TAG, "setPlace: network unavailable");
             e.printStackTrace();
         }
     }

@@ -49,11 +49,11 @@ Documentation links : [nativeBars](https://github.com/cobaltians/cobalt/wiki/nat
 Notes : 
 to update the google map location on Android use code below : 
 ```
-focusOnThisFuckingPlace(place)
+setPlace(place)
 ```
 to update the google map location on iOS use code below : 
 ```
-[self focusOnThisFuckingPlace: place]
+[self setPlace: place]
 ```
 
 Documentation links : [events](https://github.com/cobaltians/cobalt/wiki/Introduction-to-Cobalt-Events), [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cobalt.conf)
