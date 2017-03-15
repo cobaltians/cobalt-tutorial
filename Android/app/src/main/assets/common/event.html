@@ -110,8 +110,8 @@
             newEvent.id = events.length + 1; //will break if deleting items one day.
             events.unshift(newEvent);
             cobalt.storage.set("events", events);
+            cobalt.publish('eventAdded', newEvent);
             cobalt.toast('Event created');
-
           }
           //pop back to the list view.
           cobalt.navigate.pop();
