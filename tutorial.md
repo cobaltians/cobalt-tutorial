@@ -42,9 +42,9 @@ Documentation links : [nativeBars](https://github.com/cobaltians/cobalt/wiki/nat
 # Step 3
 
 - Add a "Place" field in the event form. 
-- Send event `focusMapOn` with a data like this `{ place : 'Brest'}` where "Brest" is the place entered by the user in the place field.
+- Send event `setPlace` with a data like this `{ place : 'Brest'}` where "Brest" is the place entered by the user in the place field.
 - Change the event controller to be the `withMap` native controller
-- Catch the `focusMapOn` event in this controller and update Google Map location.
+- Catch the `setPlace` event in the native controller and update Google Map location.
 
 Notes : 
 to update the google map location on Android use code below : 
@@ -60,6 +60,19 @@ Documentation links : [events](https://github.com/cobaltians/cobalt/wiki/Introdu
 
 
 # Step 4
+
+- On the native side this time, the map location change  
+- Add a "Place" field in the event form. 
+- On the native side this time, send event `setPlace` with a data like this `{ place : 'Brest'}` when the location is changed on the native map
+- Catch the `setPlace` event in the web page and update the field
+
+Notes : 
+Map location changes are already catched in the `onPlaceChanged` Just add the event to the web.
+
+Documentation links : [events](https://github.com/cobaltians/cobalt/wiki/Introduction-to-Cobalt-Events)
+
+
+# Step 5
  
  - Add title and save button to the create page
  - Catch the save button and trigger the form submit
@@ -74,7 +87,7 @@ You can use icon asset named "save" for the save button
  
 Documentation links :  [cobalt.storage](https://github.com/cobaltians/cobalt/wiki/LocalStorage), [toasts](https://github.com/cobaltians/cobalt/wiki/toasts), [navigation_pop](https://github.com/cobaltians/cobalt/wiki/Navigation_Pop), [Android back event](https://github.com/cobaltians/cobalt/wiki/backEvent)
 
-# Step 5
+# Step 6
 
 - Add pull to refresh feature on the master page to refresh content.
 - Refresh the master page list automatically when coming back.
@@ -82,7 +95,7 @@ Documentation links :  [cobalt.storage](https://github.com/cobaltians/cobalt/wik
 Documentation links : [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events), [pullToRefresh](https://github.com/cobaltians/cobalt/wiki/PullToRefresh) 
 
 
-# Step 6
+# Step 7
 
 - Catch the clic on an event in the master view
 - Push the `event.html` page with data to edit
@@ -91,7 +104,7 @@ Documentation links : [events lifecycle](https://github.com/cobaltians/cobalt/wi
 
 Documentation links : [navigation push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push), [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events) 
 
-# Step 7
+# Step 8
 
 - Use pubsub plugin to edit the event and avoid refreshing the whole list
 

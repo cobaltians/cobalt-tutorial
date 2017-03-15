@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="styles.css"/>
 
     <script type="text/javascript" src="js/zepto.min.js"></script>
     <script type="text/javascript" src="js/handlebars.min.js"></script>
@@ -13,90 +13,107 @@
     <script type="text/javascript" src="../pubsub-plugin/cobalt.pubsub.js"></script>
 
     <script type="text/javascript" src="js/app.js"></script>
-
-
 </head>
 <body>
+    <form action="" id="eventForm">
+        <ul>
+            <li>
+                <label for="title">Event title :</label><br>
+                <input type="text" id="title" placeholder="title of this event">
+            </li>
+            <li>
+                <label for="date">Date : </label><br>
+                <input type="date" id="date" placeholder="date of this event"><br>
+            </li>
+            <li>
+                <label for="place">Place : </label><br>
+                <input type="text" id="place" placeholder="place of this event">
+            </li>
+        </ul>
+        <!-- trick to allow keyboard form submission on mobile -->
+        <input type="submit" style="display: none;">
+    </form>
 
-<form action="modif">
-    Event to create : <input type="text" id="nameEvent" name="event" placeholder="Name of this event"><br>
-    Date of this event : <input type="date" id="dateEvent"><br>
-    Information : <a href="javascript:;" id="infoEvent">Click for modif</a>
-    <textarea id="info" readonly="true" disabled="true"></textarea><br>
-    Place : <br><input type="text" id="placeEvent" readonly="true" disabled="true"><br>
-    <input type="submit" value="Confirm" id="newEvent">
-</form>
 
+    <script type="text/javascript">
+      //On DOM ready
+      Zepto(function($) {
 
-<script type="text/javascript">
-  //On DOM ready
-  Zepto(function($) {
+        var editedEvent=undefined;
+        cobalt.init({
+          debug: app.debug,
+          debugInBrowser: app.debugInBrowser,
+          debugInDiv: app.debugInDiv,
+          events: {
 
-    cobalt.init({
-      debug: app.debug,
-      debugInBrowser: app.debugInBrowser,
-      debugInDiv: app.debugInDiv,
-      datePicker: {
-        format: function(value) {
-          //from yyyy-mm-dd to dd/mm/yyyy
-          var values = value.split('-');
-          return (values.length == 3) ? values.reverse().join('/') : value;
-        }
-      }
-    });
-
-    cobalt.nativeBars.setEventListener(function(itemName, event) {
-      switch (itemName) {
-        case "save":
-
-          cobalt.alert({
-            title: 'Save ?',
-            message: "Are you sure you want to override this event ?",
-            buttons: ["Yes", "No"],
-            callback: function(params) {
-              if (params.index === 0) {
-                cobalt.log("Event Reset !");
-                cobalt.toast("This is a Toast ! - Event reset !");
-                document.getElementById('nameEvent').value = "";
-                document.getElementById('dateEvent').value = "";
-                document.getElementById('info').value = "";
-                document.getElementById('placeEvent').value = "";
+            //You can try this in browser with cobalt.events.onPageShown({ id:1, title:"Hop", date:new Date() });
+            onPageShown: function(data){
+              if (data) {
+                editedEvent = data;
+                $('#title').val(data.title);
+                $('#date').val(data.date);
+                $('#place').val(data.place);
               }
+            },
+            setPlace: function(data){
+              $('#place').val(data.place);
             }
-          });
-          break;
-      }
-    });
+          }
+        });
 
-    app.touch('#newEvent', function() {
-      if (document.getElementById('nameEvent').value != "" || document.getElementById('nameEvent').placeholder != "Name of this event") {
-        var text = document.getElementById('nameEvent').value;
-        var obj1 = {value: text};
-        cobalt.storage.set('newEventName', obj1, "json");
+        cobalt.nativeBars.setEventListener(function(itemName) {
+          switch (itemName) {
+            case "save":
+              $('#eventForm').trigger("submit");
+              break;
+          }
+        });
 
-        if (document.getElementById('dateEvent').value != "") {
-          var date = document.getElementById('dateEvent').value;
-          var obj2 = {value: date};
-          cobalt.storage.set('newEventDate', obj2, "json");
+        $('#eventForm').on('submit', function(e){
+          e.preventDefault();
+          if (editedEvent) {
+            cobalt.alert({
+              title: 'Save ?',
+              message: "Are you sure you want to override this event ?",
+              buttons: ["Yes", "No"],
+              callback: function(params) {
+                if (params.index === 0) {
+                  doSubmit();
+                }
+              }
+            });
+          } else {
+            doSubmit();
+          }
+        });
 
-          var create = {value: true};
-          cobalt.storage.set('create', create, "json");
+        function doSubmit(){
+          var newEvent = {
+            title : $('#title').val(),
+            date : $('#date').val(),
+            place : $('#place').val()
+          };
+          if (editedEvent) {
+            //just notice the previous page with new data and pop
+            newEvent.id = editedEvent.id;
+            cobalt.publish('eventModified', newEvent);
+
+          } else {
+            var events = cobalt.storage.get("events");
+            newEvent.id = events.length + 1; //will break if deleting items one day.
+            events.unshift(newEvent);
+            cobalt.storage.set("events", events);
+          }
 
           cobalt.navigate.pop();
         }
 
-        else {
-          cobalt.toast("Champs non remplis");
-        }
-      }
-
-      else {
-        cobalt.toast("Champs non remplis");
-      }
-
-    });
-  })
-
-</script>
+        $('#place').on("keyup, change",function(){
+          cobalt.sendEvent("setPlace", {
+            place : $('#place').val()
+          });
+        });
+      })
+    </script>
 </body>
 </html>

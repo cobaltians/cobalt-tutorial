@@ -5,7 +5,6 @@ app.eventList = {
     //init handlebars templates
     this.initTemplates();
 
-
     //get events from storage or set default
     var events = cobalt.storage.get("events");
     if (!events) {
@@ -30,8 +29,11 @@ app.eventList = {
   formatDate:function(timeString, arg2, arg3){
     //set a default formatString
     formatString="dd/mm/yyyy";
-    var date = new Date(timeString)
-    return date.format(formatString)
+    if (timeString) {
+      var date = new Date(timeString);
+      return date.format(formatString)
+    }
+    return ""
   },
   refresh: function(PTR_callback) {
     //get the events from storage
