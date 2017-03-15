@@ -90,7 +90,7 @@ Documentation links: [events](https://github.com/cobaltians/cobalt/wiki/Introduc
  - Add title and save button to the create page
  - Catch the save button and trigger the form submit
  - Add your new event to the list of events with cobalt.storage
- - Add a toast to say "hooray" to the user
+ - Add a toast to say "Event created" to the user
  - And pop to the previous page with navigate.pop.
 
  
@@ -114,8 +114,9 @@ Documentation links : [events lifecycle](https://github.com/cobaltians/cobalt/wi
 - Push the `event.html` page with data to edit
 - Catch these data in the `event.html` page and fill the form
 - Update the save method to save this current event instead of adding a new one.
+- Ask the user to confirm before saving
 
-Documentation links: [navigation push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push), [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events) 
+Documentation links: [navigation push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push), [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events), [Alerts](https://github.com/cobaltians/Cobalt/wiki/alerts) 
 
 # Step 8
 
