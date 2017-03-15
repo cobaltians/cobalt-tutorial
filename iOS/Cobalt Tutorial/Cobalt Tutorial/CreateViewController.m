@@ -25,6 +25,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil
+                               bundle:nibBundleOrNil]) {
+        [self setDelegate:self];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
