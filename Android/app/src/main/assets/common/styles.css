@@ -44,15 +44,17 @@ ul, li{
     position: relative;
     top: 15px;
 }
-
 #eventForm label{
     font-size: 19px;
 }
 #eventForm li{
-    padding:10px;
+    padding:5px 10px;
 }
 input{
     height: 2em;
     line-height: 2em;
     width: 90%;
+}
+#date:before{
+    display: none;
 }
