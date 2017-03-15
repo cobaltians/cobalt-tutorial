@@ -73,6 +73,7 @@
           cobalt.sendCallback(callback);
         },
 
+        // TODO: to be removed 'cause it's now handle by nativeBars?
         "addEvent": function(data, callback) {
           cobalt.navigate.push({page: "addEvent.html", controller: "create"});
         },
@@ -100,7 +101,17 @@
       }
     });
 
-    app.setTitle('Cobalt Tutorial');
+    // TODO: for native implementation test, @ggendre do what you have to do with that :P
+    cobalt.nativeBars.setEventListener(function(itemName,event){
+        switch (itemName) {
+            case "create":
+                cobalt.navigate.push({page: "addEvent.html", controller: "create"});
+            break;
+        }
+    });
+
+    // Note catched anymore, remove?
+    //app.setTitle('Cobalt Tutorial');
     app.events.init();
   })
 

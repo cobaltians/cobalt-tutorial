@@ -14,3 +14,7 @@
 	path = app/src/main/assets/platform
 	url = https://github.com/cobaltians/Cobalt-Web-Android.git
 	branch = develop
+[submodule "fontawesome-font"]
+	path = fontawesome-font
+	url = https://github.com/Cobaltians-Fonts/Fonts-FontAwesome-Android.git
+	branch = develop
