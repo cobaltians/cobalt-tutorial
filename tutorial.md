@@ -18,6 +18,14 @@ To checkout the solution for each step:
 - clean your local changes with `git stash && git stash drop`
 - checkout tag `step-X` where X is the number of the step. For example : `git checkout step-1`
 
+# Step 0
+
+Time to start !
+
+- First, checkout the step 0 code `git checkout step-1`
+- Have a look around at native and web files.
+
+
 # Step 1
 
 - Init cobalt.js so that your webpage can discuss with the native
