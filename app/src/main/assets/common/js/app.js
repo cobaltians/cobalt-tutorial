@@ -1,6 +1,6 @@
 var app = {
   debug: true,
-  debugInBrowser:false,
+  //debugInBrowser:true,
   //debugInDiv:true,
 
   /* This code below, combined with the touch module of zepto helps in resolving issues
@@ -18,7 +18,7 @@ var app = {
       if (!$(this).hasClass('touched')) {
         $(this).addClass('touched');
         clearTimeout(app.touchTimer);
-        app.touchTimer = setTimeout(touchup, 1000);
+        app.touchTimer = setTimeout(touchup, 500);
         touchHandler.apply([this, e]);
 
       }
@@ -27,13 +27,5 @@ var app = {
     };
     elem.unbind('tap').on('tap', touching);
     elem.unbind('click').on('click', touching);
-  },
-
-  setTitle: function(title) {
-    if (title) {
-      cobalt.sendEvent('setTexts', { //TODO remove ? use setBarContent {title : title }
-        title: title
-      });
-    }
   }
 };

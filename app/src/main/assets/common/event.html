@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="style.css"/>
 
     <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/handlebars.min.js"></script>
+
     <script type="text/javascript" src="../platform/cobalt.js"></script>
+    <script type="text/javascript" src="../pubsub-plugin/cobalt.pubsub.js"></script>
+
     <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="../snackbar-plugin/cobalt.snackbar.js"></script>
+
 
 </head>
 <body>
@@ -38,28 +42,17 @@
           var values = value.split('-');
           return (values.length == 3) ? values.reverse().join('/') : value;
         }
-      },
-
-      events: {
-
-        "onWebLayerDismissed": function(data, callback) {
-          if (data.data) {
-            var text = data.data.value;
-            document.getElementById('info').value = text;
-          }
-        }
-
       }
-
     });
 
     cobalt.nativeBars.setEventListener(function(itemName, event) {
       switch (itemName) {
-        case "reset":
+        case "save":
+
           cobalt.alert({
-            title: 'Reset ?',
-            message: "Are you sure you want to reset this event ?",
-            buttons: ["Yeah", "No"],
+            title: 'Save ?',
+            message: "Are you sure you want to override this event ?",
+            buttons: ["Yes", "No"],
             callback: function(params) {
               if (params.index === 0) {
                 cobalt.log("Event Reset !");
@@ -73,12 +66,6 @@
           });
           break;
       }
-    });
-
-    app.setTitle('Add event');
-
-    app.touch('a#infoEvent', function() {
-      cobalt.webLayer("show", "weblayer_event.html");
     });
 
     app.touch('#newEvent', function() {
@@ -99,13 +86,11 @@
         }
 
         else {
-          // Use snackbar instead?
           cobalt.toast("Champs non remplis");
         }
       }
 
       else {
-        // Use snackbar instead?
         cobalt.toast("Champs non remplis");
       }
 
