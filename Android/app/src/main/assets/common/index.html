@@ -45,15 +45,6 @@
           }
         });
 
-        //You can try this in browser with cobalt.nativeBars.handler('create')
-        cobalt.nativeBars.setEventListener(function(itemName){
-            switch (itemName) {
-                case "create":
-                  cobalt.navigate.push({page: "event.html", controller: "event"});
-                break;
-            }
-        });
-
         eventList.init();
       })
 
