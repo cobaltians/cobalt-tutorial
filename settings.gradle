@@ -1,1 +1,1 @@
-include ':app', ':cobalt', ':fontawesome-font', ':snackbar-plugin'
+include ':app', ':cobalt', ':fontawesome-font', ':pubsub-plugin'

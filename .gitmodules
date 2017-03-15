@@ -10,3 +10,11 @@
 	path = fontawesome-font
 	url = https://github.com/Cobaltians-Fonts/Fonts-FontAwesome-Android.git
 	branch = develop
+[submodule "pubsub-plugin"]
+	path = pubsub-plugin
+	url = https://github.com/Cobaltians-Plugins/Plugins-PubSub-Android.git
+	branch = develop
+[submodule "app/src/main/assets/pubsub-plugin"]
+	path = app/src/main/assets/pubsub-plugin
+	url = https://github.com/Cobaltians-Plugins/Plugins-PubSub-Web.git
+	branch = develop
