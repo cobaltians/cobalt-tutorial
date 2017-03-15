@@ -1,20 +1,20 @@
 [submodule "cobalt"]
-	path = cobalt
+	path = Android/cobalt
 	url = https://github.com/cobaltians/Cobalt-Android.git
 	branch = develop
 [submodule "app/src/main/assets/platform"]
-	path = app/src/main/assets/platform
+	path = Android/app/src/main/assets/platform
 	url = https://github.com/cobaltians/Cobalt-Web-Android.git
 	branch = develop
 [submodule "fontawesome-font"]
-	path = fontawesome-font
+	path = Android/fontawesome-font
 	url = https://github.com/Cobaltians-Fonts/Fonts-FontAwesome-Android.git
 	branch = develop
 [submodule "pubsub-plugin"]
-	path = pubsub-plugin
+	path = Android/pubsub-plugin
 	url = https://github.com/Cobaltians-Plugins/Plugins-PubSub-Android.git
 	branch = develop
 [submodule "app/src/main/assets/pubsub-plugin"]
-	path = app/src/main/assets/pubsub-plugin
+	path = Android/app/src/main/assets/pubsub-plugin
 	url = https://github.com/Cobaltians-Plugins/Plugins-PubSub-Web.git
 	branch = develop
