@@ -20,7 +20,7 @@ git clone --recursive https://github.com/cobaltians/cobalt-tutorial.git
 
 To checkout the solution for each step: 
 
-- clean your local changes with `git stash && git stash drop`
+- clean your local changes with `git checkout -- *`
 - checkout tag `step-X` where X is the number of the step. For example : `git checkout step-1`
 
 In this tutorial you will have to touch exclusively theses files :
