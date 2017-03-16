@@ -23,18 +23,20 @@ To checkout the solution for each step:
 - clean your local changes with `git stash && git stash drop`
 - checkout tag `step-X` where X is the number of the step. For example : `git checkout step-1`
 
-# Step 0
+In this tutorial you will have to touch exclusively theses files :
+- For the common web : cobalt.conf, index.html and event.html
+- For Android : CreateActivity.java, CreateFragment.java, 
+- For iOS : CreateViewController.m
 
-Time to start !
-
-- First, checkout the step 0 code `git checkout step-0`
-- Have a look around at native and web files.
-
+If you get lost somewhere else, you are probably doing it wrong :P
 
 # Step 1
 
+Time to start !
+
+- First, checkout the step 1 code `git checkout step-1`
+- Have a look around at native and web files.
 - Init cobalt.js so that your webpage can discuss with the native
-- Create the cobalt.conf
 - Try in a web browser
 - Try in the emulator or device
 
@@ -46,7 +48,7 @@ Documentation links: [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cob
 
 - Add a title to your master view with cobalt.conf
 - Add a button to create a new event in the top bar
-- Catch this button click and push the `event.html` page
+- Catch this button click and push the `index.html` page
 
 Notes : 
 
@@ -57,7 +59,6 @@ Documentation links: [nativeBars](https://github.com/cobaltians/cobalt/wiki/nati
 
 # Step 3
 
-- Add a "Place" field in the event form. 
 - Send event `setPlace` with a data like this `{ place : 'Brest'}` where "Brest" is the place entered by the user in the place field.
 - Catch the `setPlace` event in the native controller and update Google Map location.
 
