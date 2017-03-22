@@ -33,13 +33,5 @@ public class CreateFragment extends CobaltFragment {
 
     void onPlaceChanged(String place) {
         // Add event to web here.
-        try {
-            JSONObject data = new JSONObject();
-            data.put("place", place);
-            sendEvent("setPlace", data, null);
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
 }
