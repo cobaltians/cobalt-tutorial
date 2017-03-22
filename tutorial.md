@@ -48,18 +48,18 @@ Documentation links: [cobalt.conf](https://github.com/cobaltians/cobalt/wiki/cob
 
 - Add a title to your master view with cobalt.conf
 - Add a button to create a new event in the top bar
-- Catch this button click and push the `index.html` page
+- Catch this button click and push the `event.html` page
 
 Notes : 
 
-You can use icon asset named "create" for the create button 
+You can use `"androidIcon": "ic_action_add"` and `"iosIcon": "add.png""` for the create button 
 
 
 Documentation links: [nativeBars](https://github.com/cobaltians/cobalt/wiki/nativeBars), [navigation_push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push)
 
 # Step 3
 
-- Send event `setPlace` with a data like this `{ place : 'Brest'}` where "Brest" is the place entered by the user in the place field.
+- In the event page, send event `setPlace` with a data like this `{ place : 'Brest'}` where "Brest" is the place entered by the user in the place field.
 - Catch the `setPlace` event in the native controller and update Google Map location.
 
 Notes : 
@@ -81,7 +81,7 @@ Documentation links: [events](https://github.com/cobaltians/cobalt/wiki/Introduc
 - Catch the `setPlace` event in the web page and update the field
 
 Notes: 
-Map location changes are already catched in the `onPlaceChanged` Just add the event to the web.
+Map location changes are already catched in the `onPlaceChanged` of the iOS controller and the android CreateFragment. Just send the event to the web.
 
 Documentation links: [events](https://github.com/cobaltians/cobalt/wiki/Introduction-to-Cobalt-Events)
 
@@ -96,7 +96,7 @@ Documentation links: [events](https://github.com/cobaltians/cobalt/wiki/Introduc
 
  
 Notes: 
-The list of events is an array in key `events`of cobalt.storage.
+To add the event to the list of events, add it to the array of events stored into cobalt.storage key `events`
 You can use icon asset named "save" for the save button
  
 Documentation links:  [cobalt.storage](https://github.com/cobaltians/cobalt/wiki/LocalStorage), [toasts](https://github.com/cobaltians/cobalt/wiki/toasts), [navigation_pop](https://github.com/cobaltians/cobalt/wiki/Navigation_Pop), [Android back event](https://github.com/cobaltians/cobalt/wiki/backEvent)
@@ -105,6 +105,10 @@ Documentation links:  [cobalt.storage](https://github.com/cobaltians/cobalt/wiki
 
 - Add pull to refresh feature on the master page to refresh content.
 - Refresh the master page list automatically when coming back.
+
+Note:
+
+To refresh the current list, call `eventList.refresh();`.
 
 Documentation links : [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events), [pullToRefresh](https://github.com/cobaltians/cobalt/wiki/PullToRefresh) 
 
@@ -117,15 +121,22 @@ Documentation links : [events lifecycle](https://github.com/cobaltians/cobalt/wi
 - Update the save method to save this current event instead of adding a new one.
 - Ask the user to confirm before saving
 
-Documentation links: [navigation push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push), [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events), [Alerts](https://github.com/cobaltians/Cobalt/wiki/alerts) 
+Note :
+To save the event to the list of events, use `eventList.saveEvent(modifiedEvent);`
+You can use `"icon": "fa fa-floppy-o"` to use the font icons feature of Cobalt.
+
+Documentation links: [navigation push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push), [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events), [Alerts](https://github.com/cobaltians/Cobalt/wiki/alerts), [nativeBars](https://github.com/cobaltians/cobalt/wiki/nativeBars) 
 
 # Step 8
 
 - Use pubsub plugin to edit the event and avoid refreshing the whole list
+- Remove onPageShown refresh to check if it works fine.
+- Use pubsub to refresh the list when adding an event too.
 
 Notes:
 
-To update the event DOM node in the master page you can use `app.eventList.updateEvent(event);` 
+To update the event DOM node in the master page you can use `app.eventList.updateEvent(event);`.
+ 
 
 Documentation links: [pubsub plugin](https://github.com/Cobaltians-Plugins/Plugins-PubSub)
 
