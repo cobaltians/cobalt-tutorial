@@ -137,6 +137,6 @@ public class CreateActivity extends CobaltActivity implements OnMapReadyCallback
     }
 
     void onPlaceChanged(String place) {
-        // Add event to web here.
+        ((CreateFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container)).onPlaceChanged(place);
     }
 }
