@@ -42,7 +42,7 @@
           //debugInBrowser: true,
         });
 
-        $('#place').on("change, keyup", function(){
+        $('#place').on("change", function(){
           cobalt.sendEvent("setPlace", {
             place : $('#place').val()
           });
