@@ -31,6 +31,10 @@ public class CreateFragment extends CobaltFragment {
         return false;
     }
 
+    void setPlace(String place) {
+        ((CreateActivity) mContext).setPlace(place);
+    }
+
     void onPlaceChanged(String place) {
         // Add event to web here.
     }
