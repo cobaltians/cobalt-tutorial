@@ -25,7 +25,7 @@ public class CreateFragment extends CobaltFragment {
     protected boolean onUnhandledEvent(String event, JSONObject data, String callback) {
         if ("setPlace".equals(event)) {
             try {
-                ((CreateActivity) mContext).setPlace(data.getString("place"));
+                setPlace(data.getString("place"));
             }
             catch (JSONException e) {
                 Log.w(TAG, "onUnhandledEvent - setPlace: no place field in data");
@@ -39,6 +39,10 @@ public class CreateFragment extends CobaltFragment {
     @Override
     protected boolean onUnhandledMessage(JSONObject message) {
         return false;
+    }
+
+    void setPlace(String place) {
+        ((CreateActivity) mContext).setPlace(place);
     }
 
     void onPlaceChanged(String place) {
