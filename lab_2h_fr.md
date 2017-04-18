@@ -22,6 +22,7 @@ git clone --recursive https://github.com/cobaltians/cobalt-tutorial.git
 Pour chaque étape, Les liens vers la documentation Cobalt qui vous seront utile sont indiqués. Ces pages sont aussi disponnibles sur la clé USB qui vous a été fournie dans le dossier `doc` au format wiki markdown.
 
 Dans ce TP vous toucherez exclusivement à ces fichiers :
+
 - Pour la partie web commune : cobalt.conf, index.html et event.html
 - Pour Android : CreateFragment.java, 
 - Pour iOS : CreateViewController.m
@@ -31,7 +32,7 @@ Si vous touchez à d'autres fichiers c'est que vous faites peut être fausse rou
 Si vous êtes perdus vous vouvez **vous référer aux [solutions](lab_2h_fr_soluce) qui vous ont été transmise** ou **récuprérer via git les solutions de chaque étape**. Dans ce cas il faudra : 
 
 - Supprimer toutes vos modifications locales avec `git stash && git stash drop`
-- Checkout la branche correspondante au step indiqué. Par exemple `git checkout step-5`
+- Checkout la branche correspondante à l'étape suivante. Par exemple `git checkout step-5` si vous êtes à l'étape 4.
 
 
 # Etape 1 - initialiser Cobalt
@@ -53,16 +54,6 @@ Vous pouvez utiliser son mode `debugInBrowser` de Cobalt pour prévisualiser la 
 Documentation utile pour cette étape :
 
 - [cobalt.init](https://github.com/cobaltians/Cobalt/wiki/cobalt.init)
-
-
-## Solution
-
-Voir le document de solutions ou via git : 
-
-```
-git stash && git stash drop && git checkout step-2
-```
-
 
 
 # Etape 2 - Configuration de la barre native et naviguation
@@ -88,15 +79,6 @@ Documentation utile pour cette étape :
 Nous avons déjà inclu les images necessaires dans le projet natif pour le bouton "+". Vous pouvez utiliser `"androidIcon": "ic_action_add"` et `"iosIcon": "add.png""` dans la configuration des barres Cobalt.
 
 Le controlleur natif qui affiche la carte native en bas de l'écran est déjà fait. Son nom est `event` dans le cobalt.conf.
-
-
-## Solution
-
-Voir le document de solutions ou via git : 
-
-```
-git stash && git stash drop && git checkout step-3
-```
 
 
 # Etape 3 - mettre à jour la carte de la page event.
@@ -145,14 +127,6 @@ et celui-ci si vous êtes sous iOS :
 
 `place` étant la string du lieu envoyée par le web.
 
-## Solution
-
-Voir le document de solutions ou via git : 
-
-```
-git stash && git stash drop && git checkout step-4
-```
-
 
 
 # Etape 4 - Dans l'autre sens maintenant
@@ -186,15 +160,6 @@ Pour mettre le champs web à jour avec Zepto, utilisez `val()` comme ceci :
 $('#place').val("nouvelle valeur du champs");
 ```
 
-## Solution
-
-Voir le document de solutions ou via git : 
-
-```
-git stash && git stash drop && git checkout step-5
-```
-
-
 
 # Etape 5 - un petit coup d'accélérateur
  
@@ -223,14 +188,6 @@ Cobalt fourni plusieures options pour ça :
 - Un évenement reçu quand la page précédente revient au premier plan
 - Le pull-to-refresh
 - Un plugin de pubsub qu'on va voir au step-8.
-
-## Solution
-
-Voir le document de solutions ou via git : 
-
-```
-git stash && git stash drop && git checkout step-7
-```
 
 
 # Etape 7 - deuxième coup d'accelerateur
@@ -277,13 +234,4 @@ Normalement cette documentation n'est pas dans le wiki Cobalt mais sur le reposi
 Pour mettre à jour une node DOM à partir d'un évenement, vous pouvez utiliser ceci : `eventList.updateEventNode(newEvent);` depuis la page `index.html`.
 
 Pour rafraichir la liste courante avec les dernières données, c'est toutjours `eventList.refresh();` dans la page `index.html`
-
-
-## Solution
-
-Voir le document de solutions ou via git : 
-
-```
-git stash && git stash drop && git checkout master
-```
 
