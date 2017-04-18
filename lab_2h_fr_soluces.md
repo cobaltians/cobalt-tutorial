@@ -282,9 +282,8 @@ cobalt.publish('eventCreated', newEvent);
 ```
 - Dans `index.html`  rafraichissez la liste à la reception de cet évenement :
 
+```
 cobalt.subscribe('eventCreated', function(newEvent){
 	eventList.refresh();
 });
-
-
-
+```

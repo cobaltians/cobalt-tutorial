@@ -97,9 +97,11 @@ Documentation links: [events](https://github.com/cobaltians/cobalt/wiki/Introduc
  
 Notes: 
 To add the event to the list of events, add it to the array of events stored into cobalt.storage key `events`
-You can use icon asset named "save" for the save button
+You can use `"icon": "fa fa-floppy-o"` for the save button. It will use the font icons feature of Cobalt.
+
+
  
-Documentation links:  [cobalt.storage](https://github.com/cobaltians/cobalt/wiki/LocalStorage), [toasts](https://github.com/cobaltians/cobalt/wiki/toasts), [navigation_pop](https://github.com/cobaltians/cobalt/wiki/Navigation_Pop), [Android back event](https://github.com/cobaltians/cobalt/wiki/backEvent)
+Documentation links:  [cobalt.storage](https://github.com/cobaltians/cobalt/wiki/LocalStorage), [toasts](https://github.com/cobaltians/cobalt/wiki/toasts), [navigation_pop](https://github.com/cobaltians/cobalt/wiki/Navigation_Pop), [Android back event](https://github.com/cobaltians/cobalt/wiki/backEvent), [nativeBars](https://github.com/cobaltians/cobalt/wiki/nativeBars)
 
 # Step 6
 
@@ -123,7 +125,6 @@ Documentation links : [events lifecycle](https://github.com/cobaltians/cobalt/wi
 
 Note :
 To save the event to the list of events, use `eventList.saveEvent(modifiedEvent);`
-You can use `"icon": "fa fa-floppy-o"` to use the font icons feature of Cobalt.
 
 Documentation links: [navigation push](https://github.com/cobaltians/cobalt/wiki/Navigation_Push), [events lifecycle](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events), [Alerts](https://github.com/cobaltians/Cobalt/wiki/alerts), [nativeBars](https://github.com/cobaltians/cobalt/wiki/nativeBars) 
 
@@ -135,7 +136,7 @@ Documentation links: [navigation push](https://github.com/cobaltians/cobalt/wiki
 
 Notes:
 
-To update the event DOM node in the master page you can use `app.eventList.updateEvent(event);`.
+To update the event DOM node in the master page you can use `eventList.updateEvent(event);`.
  
 
 Documentation links: [pubsub plugin](https://github.com/Cobaltians-Plugins/Plugins-PubSub)
