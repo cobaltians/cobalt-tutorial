@@ -23,9 +23,11 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        NSString *resourcePath = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/common/"];
+        // Not needed, but if not this hierarchy, needed ;)
+        /*
+        NSString *resourcePath = [NSString stringWithFormat:@"%@%@", [[NSBundle mainBundle] resourcePath], @"/www/"];
         [Cobalt setResourcePath:resourcePath];
-        
+        */
         [self initWithPage:@"index.html"
              andController:@"default"];
     }
