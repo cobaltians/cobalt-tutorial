@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="mapView" destination="KE1-7t-MzF" id="vBu-hu-qif"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webLayer" destination="tSq-8e-3eH" id="QcE-0Q-a1r"/>
                 <outlet property="webView" destination="EFh-7g-uTe" id="d1f-NT-nge"/>
             </connections>
         </placeholder>
@@ -22,9 +23,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFh-7g-uTe">
+                <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFh-7g-uTe">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="A6E-4X-z6s"/>
                     </connections>
@@ -35,14 +36,25 @@
                         <outlet property="delegate" destination="-1" id="yWE-rC-CQx"/>
                     </connections>
                 </mapView>
+                <webView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSq-8e-3eH">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="OMf-LC-kaY"/>
+                    </connections>
+                </webView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="KE1-7t-MzF" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="BSG-VZ-t28"/>
                 <constraint firstItem="KE1-7t-MzF" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="DDF-rZ-o1p"/>
+                <constraint firstItem="tSq-8e-3eH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HrB-YW-g6C"/>
+                <constraint firstItem="tSq-8e-3eH" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="b9n-I6-gQM"/>
                 <constraint firstItem="EFh-7g-uTe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cie-BP-v0f"/>
                 <constraint firstItem="EFh-7g-uTe" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="dBa-0X-4L1"/>
                 <constraint firstItem="EFh-7g-uTe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hML-Mv-c85"/>
+                <constraint firstItem="tSq-8e-3eH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hhB-1D-4o4"/>
+                <constraint firstItem="tSq-8e-3eH" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="lNi-Vp-Rfo"/>
                 <constraint firstAttribute="bottom" secondItem="KE1-7t-MzF" secondAttribute="bottom" id="r1Y-4X-D7B"/>
                 <constraint firstItem="KE1-7t-MzF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yNx-sF-1nl"/>
                 <constraint firstItem="EFh-7g-uTe" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="zbi-zR-rCa"/>

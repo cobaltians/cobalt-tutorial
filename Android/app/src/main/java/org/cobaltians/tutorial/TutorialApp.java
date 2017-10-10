@@ -11,6 +11,7 @@ public final class TutorialApp extends Application {
         super.onCreate();
 
         Cobalt.DEBUG = true;
-        Cobalt.getInstance(this).setResourcePath("common/");
+        //not needed here but if not same hierarchy, needed ;)
+        //Cobalt.getInstance(this).setResourcePath("www/");
     }
 }
