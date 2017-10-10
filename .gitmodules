@@ -2,10 +2,6 @@
 	path = Android/cobalt
 	url = https://github.com/cobaltians/Cobalt-Android.git
 	branch = develop
-[submodule "app/src/main/assets/platform"]
-	path = Android/app/src/main/assets/platform
-	url = https://github.com/cobaltians/Cobalt-Web-Android.git
-	branch = develop
 [submodule "fontawesome-font"]
 	path = Android/fontawesome-font
 	url = https://github.com/Cobaltians-Fonts/Fonts-FontAwesome-Android.git
@@ -13,10 +9,6 @@
 [submodule "pubsub-plugin"]
 	path = Android/pubsub-plugin
 	url = https://github.com/Cobaltians-Plugins/Plugins-PubSub-Android.git
-	branch = develop
-[submodule "app/src/main/assets/pubsub-plugin"]
-	path = Android/app/src/main/assets/pubsub-plugin
-	url = https://github.com/Cobaltians-Plugins/Plugins-PubSub-Web.git
 	branch = develop
 [submodule "iOS/Cobalt Tutorial/Cobalt"]
 	path = iOS/Cobalt Tutorial/Cobalt
@@ -30,7 +22,11 @@
 	path = iOS/Cobalt Tutorial/FontAwesome-Font
 	url = https://github.com/Cobaltians-Fonts/Fonts-FontAwesome-iOS.git
 	branch = develop
-[submodule "iOS/platform"]
-	path = iOS/platform
-	url = https://github.com/cobaltians/Cobalt-Web-iOS.git
+[submodule "www/js/cobalt"]
+	path = www/js/cobalt
+	url = https://github.com/cobaltians/Cobalt-Web.git
+	branch = develop
+[submodule "www/js/pubsub-plugin"]
+	path = www/js/pubsub-plugin
+	url = https://github.com/Cobaltians-Plugins/Plugins-PubSub-Web.git
 	branch = develop
