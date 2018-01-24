@@ -46,7 +46,7 @@ Le code Web commun est dans `Android/app/src/main/assets/common`. Le projet iOS 
 
 Votre but ici est d'initialiser Cobalt côté Web afin qu'il puisse communiquer avec le natif et de vérifier que le contenu de la page s'affiche quand vous lancez l'application sur votre téléphone ou votre émulateur.
 
-Vous pouvez utiliser le mode `debugInBrowser` de Cobalt pour prévisualiser la page dans votre navigateur.
+Vous pouvez prévisualiser la page dans votre navigateur.
 
 ## Documentation
 
@@ -187,8 +187,8 @@ Cobalt fourni plusieurs options pour ça :
 ## Documentation
 
 Documentation utile pour cette étape :
-
-- [Introduction-to-Cobalt-Events](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events) 
+ 
+- [Cobalt Web Lifecycle Events](https://github.com/cobaltians/cobalt/wiki/Cobalt-Web-Lifecycle-Events)
 - [PullToRefresh](https://github.com/cobaltians/Cobalt/wiki/PullToRefresh)
 
 **Notes :**
