@@ -11,7 +11,7 @@
 		BE05C2E21E79ABEF00F20BB2 /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE05C2E01E79ABEF00F20BB2 /* CreateViewController.xib */; };
 		BE05C2E81E79AEB200F20BB2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE05C2E71E79AEB200F20BB2 /* MapKit.framework */; };
 		BE05C2ED1E79B5A200F20BB2 /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BE05C2EC1E79B5A200F20BB2 /* PlaceAnnotation.m */; };
-		BE68739E1F8D2C610021AD0F /* www in Resources */ = {isa = PBXBuildFile; fileRef = BEEBC98D1F8D294300C02E06 /* www */; };
+		BE9B17EF2018A0C20026DFCA /* www in Resources */ = {isa = PBXBuildFile; fileRef = BE9B17EE2018A0C20026DFCA /* www */; };
 		BEFEF81B1E79A1F300A7F7FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF81A1E79A1F300A7F7FB /* main.m */; };
 		BEFEF81E1E79A1F300A7F7FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF81D1E79A1F300A7F7FB /* AppDelegate.m */; };
 		BEFEF8211E79A1F300A7F7FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFEF8201E79A1F300A7F7FB /* ViewController.m */; };
@@ -62,7 +62,7 @@
 		BE05C2E71E79AEB200F20BB2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BE05C2EB1E79B5A200F20BB2 /* PlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceAnnotation.h; sourceTree = "<group>"; };
 		BE05C2EC1E79B5A200F20BB2 /* PlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceAnnotation.m; sourceTree = "<group>"; };
-		BEEBC98D1F8D294300C02E06 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
+		BE9B17EE2018A0C20026DFCA /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../Android/app/src/main/assets/www; sourceTree = "<group>"; };
 		BEFEF8161E79A1F300A7F7FB /* Cobalt Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cobalt Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFEF81A1E79A1F300A7F7FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BEFEF81C1E79A1F300A7F7FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		BEFEF80D1E79A1F300A7F7FB = {
 			isa = PBXGroup;
 			children = (
-				BEEBC98D1F8D294300C02E06 /* www */,
+				BE9B17EE2018A0C20026DFCA /* www */,
 				BEFEF8181E79A1F300A7F7FB /* Cobalt Tutorial */,
 				BEFEF83B1E79A40D00A7F7FB /* Frameworks */,
 				BEFEF8171E79A1F300A7F7FB /* Products */,
@@ -321,9 +321,9 @@
 				BE05C2E21E79ABEF00F20BB2 /* CreateViewController.xib in Resources */,
 				BEFEF8601E79A53000A7F7FB /* LICENSE in Resources */,
 				BEFEF8241E79A1F300A7F7FB /* Main.storyboard in Resources */,
+				BE9B17EF2018A0C20026DFCA /* www in Resources */,
 				BEFEF8541E79A4E500A7F7FB /* LICENSE in Resources */,
 				BEFEF8491E79A46A00A7F7FB /* Cobalt.bundle in Resources */,
-				BE68739E1F8D2C610021AD0F /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
