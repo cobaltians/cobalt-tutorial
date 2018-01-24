@@ -8,8 +8,7 @@
 
 ```
 cobalt.init({
-    debug:true,
-    //debugInBrowser:true
+    debug:true
 });
 ```
 
