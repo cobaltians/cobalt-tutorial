@@ -16,7 +16,7 @@ Vous utiliserez :
 
 Le code source de cette application est disponnible sur la clé USB qui vous a été fournie dans le dossier `cobalt-tutorial` ou à l'url suivante :
 ```
-git clone --recursive https://github.com/cobaltians/cobalt-tutorial.git -b step-0
+git clone --recursive https://github.com/cobaltians/cobalt-tutorial.git -b step-1
 ```
 
 Pour chaque étape, les liens vers la documentation Cobalt qui vous seront utiles sont indiqués. Ces pages sont aussi disponibles sur la clé USB qui vous a été fournie dans le dossier `doc` au format markdown.
